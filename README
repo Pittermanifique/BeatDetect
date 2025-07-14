@@ -34,7 +34,10 @@ Pour effectuer des ajustements, il faut modifier le fichier beat.bat qui se trou
 📌 Ces trois paramètres déterminent quelle zone du spectre audio est ciblée pour les kicks. Typiquement, les kicks se situent dans la zone 40–100 Hz, donc adapte bp-low / bp-high selon le type de son que tu veux capter.
 
 🚀 Pour aller plus loin
+
 Le dossier esp32 contient un programme pour ESP32 que tu peux modifier ou compiler pour l'utiliser.
+
+le programe envoie dans une comunication serie deux messages différant "1" pour un beat detecté et "0" quant il est plus detecté ce qui permet de fasilemet gére vos lumières etc après.
 
 Il est possible d’ajouter des paramètres supplémentaires :
 Pour cela, lance un terminal, rends-toi dans le dossier beat, et tape la commande :
