@@ -17,7 +17,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_lunchButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    void lancerAuDemarrage();
 };
 #endif // MAINWINDOW_H

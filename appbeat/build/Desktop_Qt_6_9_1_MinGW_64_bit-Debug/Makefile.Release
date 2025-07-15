@@ -739,7 +739,21 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.9.1/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.9.1/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/QDir \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qdir.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qdirlisting.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qfiledevice.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qfileinfo.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qtimezone.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/QFileInfo \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/QRegularExpression \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/QTextStream \
+		C:/Qt/6.9.1/mingw_64/include/QtCore/QCoreApplication
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\..\mainwindow.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
