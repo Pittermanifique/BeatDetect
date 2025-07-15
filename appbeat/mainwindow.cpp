@@ -9,6 +9,7 @@
 #include <QCoreApplication>
 
 void MainWindow::lancerAuDemarrage() {
+    QDir::setCurrent(QCoreApplication::applicationDirPath());
     QString chemin = QCoreApplication::applicationDirPath() + "/run_beat.bat";
     QFile fichier(chemin);
 
@@ -67,7 +68,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QDir::setCurrent(QCoreApplication::applicationDirPath());
     lancerAuDemarrage();
 }
 
@@ -89,7 +89,7 @@ void MainWindow::on_lunchButton_clicked()
               << "  pause\n"
               << "  exit\n"
               << ") ELSE (\n"
-              << "  echo Python est installé\n"
+              << "  echo Python est installe\n"
               << ")\n"
               << "IF EXIST requirements.txt (\n"
               << "  echo Installation des bibliotheques...\n"
