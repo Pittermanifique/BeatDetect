@@ -1,7 +1,11 @@
 🖥️ Démarrage
 Commence par cloner ce répertoire sur ton ordinateur.
-Pour utiliser ce programme, tu peux le lancer directement en double-cliquant sur le fichier beat.bat dans le dossier beat, ou créer un raccourci en double-cliquant sur le fichier raccourci.
-Pour effectuer des ajustements, il faut modifier le fichier beat.bat qui se trouve dans le répertoire beat.
+
+faire un double clique sur le fichier raccourcigraph.bat il apparait une nouvelle app sur votre bureau executer la c'est un luncher qui permet de lancer plus facilement et plus rapidement le programe en efectuent des réglage si nesésaire
+
+alternatives :
+  Pour utiliser ce programme, tu peux le lancer directement en double-cliquant sur le fichier beat.bat dans le dossier beat, ou créer un raccourci en double-cliquant sur le fichier raccourci.
+  Pour effectuer des ajustements, il faut modifier le fichier beat.bat qui se trouve dans le répertoire beat.
 
 📞 Communication avec le microcontrôleur
 | Paramètre | Effet | 
