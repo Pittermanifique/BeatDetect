@@ -1,49 +1,46 @@
 🖥️ Démarrage
-Commence par cloner ce répertoire sur ton ordinateur.
+Commence par cloner ce dépôt sur ton ordinateur.
 
-faire un double clique sur le fichier raccourcigraph.bat il apparait une nouvelle app sur votre bureau executer la c'est un luncher qui permet de lancer plus facilement et plus rapidement le programe en efectuent des réglage si nesésaire
+Ensuite, double-clique sur le fichier raccourcigraph.bat.
+Cela crée une nouvelle application (un lanceur) sur ton bureau.
+Lance cette application pour démarrer plus facilement et rapidement le programme, avec la possibilité d’effectuer des réglages si nécessaire.
 
-alternatives :
-  Pour utiliser ce programme, tu peux le lancer directement en double-cliquant sur le fichier beat.bat dans le dossier beat, ou créer un raccourci en double-cliquant sur le fichier raccourci.
-  Pour effectuer des ajustements, il faut modifier le fichier beat.bat qui se trouve dans le répertoire beat.
+Alternatives :
+  Tu peux aussi lancer directement le programme en double-cliquant sur le fichier beat.bat situé dans le dossier beat.
+  
+  Pour faciliter les choses, tu peux créer un raccourci en double-cliquant sur le fichier raccourci.
+  
+  Pour modifier les réglages :
+  Il faut éditer le fichier beat.bat qui se trouve dans le dossier beat.
 
 📞 Communication avec le microcontrôleur
-| Paramètre | Effet | 
-| --port COM7 | 🚪 Port de communication avec le microcontrôleur, à ajuster selon la connexion choisie. | 
-| --baudrate 115200 | 🐇 Vitesse de transfert entre l'ordinateur et le microcontrôleur (à modifier uniquement en cas spécifique). | 
-
-
+  --port COM7	🚪 Port de communication avec le microcontrôleur. À adapter selon la connexion utilisée.
+  --baudrate 115200	🐇 Vitesse de transfert entre l’ordinateur et le microcontrôleur (modifier uniquement si nécessaire).
 
 🎯 Sensibilité à la détection des kicks
-| Paramètre | Effet | 
-| --k-high | 💥 Sensibilité aux pics — plus la valeur est petite, plus le système est sensible aux variations. Trop bas = risque de faux positifs. Exemple : 1.3 est raisonnable. | 
-| --k-low | 🔁 Hystérésis pour le réarmement — plus cette valeur est proche de k-high, plus le système se réarme vite. Trop basse = détection plus prudente. Exemple : 0.8. | 
-| --abs-flux-th | 📊 Seuil absolu du flux spectral — seuil trop élevé = peu de kicks détectés. Trop bas = détection même sur du bruit. | 
-
-
+  --k-high	💥 Sensibilité aux pics : plus la valeur est basse, plus le système est sensible aux variations. Trop bas = faux positifs. Exemple : 1.3 est raisonnable.
+  --k-low	🔁 Hystérésis pour le réarmement : plus cette valeur est proche de k-high, plus le système se réarme rapidement. Trop bas = détection plus prudente. Exemple : 0.8.
 
 ⏱️ Intervalle minimal entre deux détections
-| Paramètre | Effet | 
-| --min-interval | ⏳ Temps en secondes entre deux kicks — évite les détections trop rapprochées. Exemple : 0.18 pour ~1 kick toutes les 180 ms. Augmente à 0.3 ou plus pour ralentir. | 
-
-
+  --min-interval	⏳ Temps minimal (en secondes) entre deux kicks détectés — évite les détections trop rapprochées. Exemple : 0.18 (180 ms entre kicks). Augmente à 0.3 ou plus pour ralentir.
 
 🎵 Fréquences d’analyse (filtre passe-bande)
-| Paramètre | Effet | 
-| --bp-low | 🔊 Fréquence minimale analysée — exemple : 40.0 Hz | 
-| --bp-high | 🔊 Fréquence maximale analysée — exemple : 80.0 Hz | 
-| --bp-order | 🔧 Précision du filtre — Ordre plus élevé = filtre plus “pointu”, mais plus sensible au bruit. Valeur typique : 1 ou 2 | 
-
-
-📌 Ces trois paramètres déterminent quelle zone du spectre audio est ciblée pour les kicks. Typiquement, les kicks se situent dans la zone 40–100 Hz, donc adapte bp-low / bp-high selon le type de son que tu veux capter.
+  --bp-low	🔊 Fréquence minimale analysée. Exemple : 40.0 Hz
+  --bp-high	🔊 Fréquence maximale analysée. Exemple : 80.0 Hz
+  --bp-order	🔧 Précision du filtre : un ordre plus élevé donne un filtre plus “pointu”, mais plus sensible au bruit. Valeurs typiques : 1 ou 2
+  
+  📌 Ces trois paramètres déterminent la zone du spectre audio ciblée pour la détection des kicks. Typiquement, les kicks se situent entre 40 et 100 Hz. Adapte bp-low et bp-high selon le type de son que tu souhaites capter.
 
 🚀 Pour aller plus loin
-
-Le dossier esp32 contient un programme pour ESP32 que tu peux modifier ou compiler pour l'utiliser.
-
-le programe envoie dans une comunication serie deux messages différant "1" pour un beat detecté et "0" quant il est plus detecté ce qui permet de fasilemet gére vos lumières etc après.
-
-Il est possible d’ajouter des paramètres supplémentaires :
-Pour cela, lance un terminal, rends-toi dans le dossier beat, et tape la commande :
-python beat.py --help
-Tous les paramètres disponibles s'afficheront
+  Le dossier esp32 contient un programme pour ESP32 que tu peux modifier ou compiler selon tes besoins.
+  
+  Le programme envoie par communication série deux messages différents :
+  
+  "1" pour un beat détecté,
+  
+  "0" lorsque le beat n’est plus détecté.
+  Cela permet de gérer facilement des lumières ou autres effets en fonction des beats.
+  
+  Il est possible d’ajouter des paramètres supplémentaires.
+  Pour voir tous les paramètres disponibles, ouvre un terminal, rends-toi dans le dossier beat et tape :
+  python beat.py --help
