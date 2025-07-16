@@ -4,9 +4,7 @@
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -19,9 +17,15 @@ public:
 
 private slots:
     void on_lunchButton_clicked();
+    void on_save_clicked();
+    void on_preset_currentIndexChanged(const QString &fichierNom);
+    void on_deleteButton_clicked();  // <-- slot pour suppression
 
 private:
     Ui::MainWindow *ui;
+
+    void chargerFichiersBatch();
     void lancerAuDemarrage();
 };
+
 #endif // MAINWINDOW_H

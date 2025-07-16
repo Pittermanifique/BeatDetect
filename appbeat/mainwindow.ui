@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>335</width>
-    <height>388</height>
+    <width>329</width>
+    <height>449</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>40</x>
       <y>20</y>
       <width>251</width>
-      <height>341</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="orientation">
@@ -75,6 +75,37 @@
      <layout class="QVBoxLayout" name="verticalLayout_8">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="sizeConstraint">
+           <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>select preset</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="preset"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Name"/>
+          </item>
+         </layout>
+        </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
@@ -200,11 +231,25 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <property name="spacing">
-         <number>40</number>
+         <number>15</number>
         </property>
         <property name="leftMargin">
          <number>0</number>
         </property>
+        <item>
+         <widget class="QPushButton" name="save">
+          <property name="text">
+           <string>save</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="deleteButton">
+          <property name="text">
+           <string>delete</string>
+          </property>
+         </widget>
+        </item>
         <item>
          <widget class="QPushButton" name="lunchButton">
           <property name="text">

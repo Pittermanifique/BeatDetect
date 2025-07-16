@@ -7,7 +7,7 @@ IF %ERRORLEVEL% NEQ 0 (
   pause
   exit
 ) ELSE (
-  echo Python est installe
+  echo Python est installé
 )
 IF EXIST requirements.txt (
   echo Installation des bibliotheques...

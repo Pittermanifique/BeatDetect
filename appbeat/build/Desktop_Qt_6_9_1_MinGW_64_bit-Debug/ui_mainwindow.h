@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -31,6 +32,12 @@ public:
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *label_5;
+    QComboBox *preset;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *label_10;
+    QLineEdit *Name;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
     QLabel *label;
@@ -58,18 +65,20 @@ public:
     QLineEdit *bphigh;
     QLineEdit *bporder;
     QHBoxLayout *horizontalLayout_5;
+    QPushButton *save;
+    QPushButton *deleteButton;
     QPushButton *lunchButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(335, 388);
+        MainWindow->resize(329, 449);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         splitter = new QSplitter(centralwidget);
         splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(40, 20, 251, 341));
+        splitter->setGeometry(QRect(40, 20, 251, 411));
         splitter->setOrientation(Qt::Orientation::Vertical);
         splitter->setHandleWidth(11);
         titre = new QLabel(splitter);
@@ -97,6 +106,37 @@ public:
         verticalLayout_8->setContentsMargins(0, 0, 0, 0);
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName("verticalLayout_7");
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        horizontalLayout_6->setSizeConstraint(QLayout::SizeConstraint::SetDefaultConstraint);
+        label_5 = new QLabel(layoutWidget);
+        label_5->setObjectName("label_5");
+
+        horizontalLayout_6->addWidget(label_5);
+
+        preset = new QComboBox(layoutWidget);
+        preset->setObjectName("preset");
+
+        horizontalLayout_6->addWidget(preset);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_6);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName("horizontalLayout_7");
+        label_10 = new QLabel(layoutWidget);
+        label_10->setObjectName("label_10");
+
+        horizontalLayout_7->addWidget(label_10);
+
+        Name = new QLineEdit(layoutWidget);
+        Name->setObjectName("Name");
+
+        horizontalLayout_7->addWidget(Name);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_7);
+
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         verticalLayout = new QVBoxLayout();
@@ -231,9 +271,19 @@ public:
         verticalLayout_8->addLayout(verticalLayout_7);
 
         horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(40);
+        horizontalLayout_5->setSpacing(15);
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         horizontalLayout_5->setContentsMargins(0, -1, -1, -1);
+        save = new QPushButton(layoutWidget);
+        save->setObjectName("save");
+
+        horizontalLayout_5->addWidget(save);
+
+        deleteButton = new QPushButton(layoutWidget);
+        deleteButton->setObjectName("deleteButton");
+
+        horizontalLayout_5->addWidget(deleteButton);
+
         lunchButton = new QPushButton(layoutWidget);
         lunchButton->setObjectName("lunchButton");
 
@@ -254,6 +304,8 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         titre->setText(QCoreApplication::translate("MainWindow", "app beat", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "select preset", nullptr));
+        label_10->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "--port", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "--baudrate", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "--k-high", nullptr));
@@ -262,6 +314,8 @@ public:
         label_9->setText(QCoreApplication::translate("MainWindow", "--bp-low", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "--bp-high", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "--bp-order", nullptr));
+        save->setText(QCoreApplication::translate("MainWindow", "save", nullptr));
+        deleteButton->setText(QCoreApplication::translate("MainWindow", "delete", nullptr));
         lunchButton->setText(QCoreApplication::translate("MainWindow", "lunch", nullptr));
     } // retranslateUi
 
