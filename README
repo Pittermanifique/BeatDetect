@@ -1,17 +1,12 @@
 🖥️ Démarrage
-Commence par cloner ce dépôt sur ton ordinateur.
+allez dans la release 1.3.0 ou sup intalez l'instaleteur puis executez le.
 
-Ensuite, double-clique sur le fichier raccourcigraph.bat.
-Cela crée une nouvelle application (un lanceur) sur ton bureau.
+Cela crée une nouvelle application (un lanceur) sur votre bureau.
 Lance cette application pour démarrer plus facilement et rapidement le programme, avec la possibilité d’effectuer des réglages si nécessaire.
 
 Alternatives :
-  Tu peux aussi lancer directement le programme en double-cliquant sur le fichier beat.bat situé dans le dossier beat.
-  
-  Pour faciliter les choses, tu peux créer un raccourci en double-cliquant sur le fichier raccourci.
-  
-  Pour modifier les réglages :
-  Il faut éditer le fichier beat.bat qui se trouve dans le dossier beat.
+  Commence par cloner ce dépôt sur ton ordinateur.
+  Ensuite, double-clique sur le fichier raccourcigraph.bat.
 
 📞 Communication avec le microcontrôleur
   --port COM7	🚪 Port de communication avec le microcontrôleur. À adapter selon la connexion utilisée.
