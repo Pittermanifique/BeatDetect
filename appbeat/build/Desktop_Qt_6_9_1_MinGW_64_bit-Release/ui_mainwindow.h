@@ -32,10 +32,10 @@ public:
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
-    QHBoxLayout *horizontalLayout_6;
+    QSplitter *splitter_2;
     QLabel *label_5;
     QComboBox *preset;
-    QHBoxLayout *horizontalLayout_7;
+    QSplitter *splitter_3;
     QLabel *label_10;
     QLineEdit *Name;
     QHBoxLayout *horizontalLayout_2;
@@ -73,7 +73,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(329, 449);
+        MainWindow->resize(329, 448);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         splitter = new QSplitter(centralwidget);
@@ -106,36 +106,29 @@ public:
         verticalLayout_8->setContentsMargins(0, 0, 0, 0);
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName("verticalLayout_7");
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName("horizontalLayout_6");
-        horizontalLayout_6->setSizeConstraint(QLayout::SizeConstraint::SetDefaultConstraint);
-        label_5 = new QLabel(layoutWidget);
+        splitter_2 = new QSplitter(layoutWidget);
+        splitter_2->setObjectName("splitter_2");
+        splitter_2->setOrientation(Qt::Orientation::Horizontal);
+        label_5 = new QLabel(splitter_2);
         label_5->setObjectName("label_5");
-
-        horizontalLayout_6->addWidget(label_5);
-
-        preset = new QComboBox(layoutWidget);
+        splitter_2->addWidget(label_5);
+        preset = new QComboBox(splitter_2);
         preset->setObjectName("preset");
+        splitter_2->addWidget(preset);
 
-        horizontalLayout_6->addWidget(preset);
+        verticalLayout_7->addWidget(splitter_2);
 
-
-        verticalLayout_7->addLayout(horizontalLayout_6);
-
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName("horizontalLayout_7");
-        label_10 = new QLabel(layoutWidget);
+        splitter_3 = new QSplitter(layoutWidget);
+        splitter_3->setObjectName("splitter_3");
+        splitter_3->setOrientation(Qt::Orientation::Horizontal);
+        label_10 = new QLabel(splitter_3);
         label_10->setObjectName("label_10");
-
-        horizontalLayout_7->addWidget(label_10);
-
-        Name = new QLineEdit(layoutWidget);
+        splitter_3->addWidget(label_10);
+        Name = new QLineEdit(splitter_3);
         Name->setObjectName("Name");
+        splitter_3->addWidget(Name);
 
-        horizontalLayout_7->addWidget(Name);
-
-
-        verticalLayout_7->addLayout(horizontalLayout_7);
+        verticalLayout_7->addWidget(splitter_3);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
