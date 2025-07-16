@@ -7,6 +7,11 @@ Outfile "${APP_NAME}_Installer.exe"
 InstallDir "${INSTALL_DIR}"
 RequestExecutionLevel admin
 
+; Icônes pour l’installateur et le désinstalleur
+Icon "icone.ico"
+UninstallIcon "icone.ico"
+
+; Pages standards
 Page directory
 Page instfiles
 UninstPage uninstConfirm
@@ -14,35 +19,46 @@ UninstPage instfiles
 
 Section "Install"
 
-  SetOutPath $INSTDIR
+  SetOutPath "$INSTDIR"
 
-  ; Copier tous les fichiers du dossier d'installation
-  File /r "*.*"
+  ; Copie tous les fichiers (assure-toi que le script est dans le bon dossier)
+  File /r *.*
 
-  ; Créer un raccourci sur le bureau
-  CreateShortCut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\appbeat\build\Desktop_Qt_6_9_1_MinGW_64_bit-Release\release\appbeat.exe" "" "$INSTDIR\icon.ico"
+  ; Copie l’icône dans le dossier d’installation
+  File "icone.ico"
 
-  ; Créer un raccourci dans le menu Démarrer
+  ; Créer raccourcis
+  CreateShortCut "$DESKTOP\${APP_NAME}.lnk" "$INSTDIR\appbeat\build\Desktop_Qt_6_9_1_MinGW_64_bit-Release\release\appbeat.exe" "" "$INSTDIR\icone.ico"
   CreateDirectory "$SMPROGRAMS\${APP_NAME}"
-  CreateShortCut "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk" "$INSTDIR\appbeat\build\Desktop_Qt_6_9_1_MinGW_64_bit-Release\release\appbeat.exe" "" "$INSTDIR\icon.ico"
+  CreateShortCut "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk" "$INSTDIR\appbeat\build\Desktop_Qt_6_9_1_MinGW_64_bit-Release\release\appbeat.exe" "" "$INSTDIR\icone.ico"
 
-  ; Enregistrer pour la désinstallation
+  ; Enregistre le désinstalleur
   WriteUninstaller "$INSTDIR\Uninstall.exe"
+
+  ; Écrit dans le registre pour apparaître dans “Programmes et fonctionnalités”
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayName" "${APP_NAME} ${APP_VERSION}"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "UninstallString" "$INSTDIR\Uninstall.exe"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "DisplayIcon" "$INSTDIR\icon.ico"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "Publisher" "${APP_PUBLISHER}"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "InstallLocation" "$INSTDIR"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}" "Version" "${APP_VERSION}"
 
 SectionEnd
 
 Section "Uninstall"
 
-  ; Supprimer les fichiers
+  ; Supprime les fichiers
   Delete "$INSTDIR\appbeat\build\Desktop_Qt_6_9_1_MinGW_64_bit-Release\release\appbeat.exe"
-  Delete "$INSTDIR\icon.ico"
+  Delete "$INSTDIR\icone.ico"
   Delete "$INSTDIR\Uninstall.exe"
   RMDir /r "$INSTDIR"
 
-  ; Supprimer les raccourcis
+  ; Supprime les raccourcis
   Delete "$DESKTOP\${APP_NAME}.lnk"
   Delete "$SMPROGRAMS\${APP_NAME}\${APP_NAME}.lnk"
   RMDir "$SMPROGRAMS\${APP_NAME}"
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\APP_NAME"
+
+  ; Supprime la clé de désinstallation
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 
 SectionEnd
