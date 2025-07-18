@@ -1,4 +1,4 @@
-🖥️ Démarrage
+🖥️ Démarrage pour window (recomendé)
 allez dans la release 1.3.0 ou sup intalez l'instaleteur puis executez le.
 
 Cela crée une nouvelle application (un lanceur) sur votre bureau.
@@ -7,6 +7,11 @@ Lance cette application pour démarrer plus facilement et rapidement le programm
 Alternatives :
   Commence par cloner ce dépôt sur ton ordinateur.
   Ensuite, double-clique sur le fichier raccourcigraph.bat.
+
+🖥️ Démarrage sous macOS (en théorie, ça fonctionne)
+  Clonez le répertoire sur votre ordinateur.
+  Allez dans le dossier beat et lancez le script beatMAC.sh.
+  Pour modifier les paramètres, éditez le fichier .sh avec un éditeur de texte (comme TextEdit) et ajustez les valeurs désirées.
 
 📞 Communication avec le microcontrôleur
   --port COM7	🚪 Port de communication avec le microcontrôleur. À adapter selon la connexion utilisée.
